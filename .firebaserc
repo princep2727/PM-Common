@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "pm-hub-c33be"
+  },
+  "targets": {
+    "pm-hub-c33be": {
+      "hosting": {
+        "commons": [
+          "pm-commons"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
