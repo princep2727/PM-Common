@@ -28,3 +28,4 @@ dist-ssr
 
 # Firebase
 .firebase/
+scripts/serviceAccountKey.json

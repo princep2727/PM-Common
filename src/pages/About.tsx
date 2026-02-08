@@ -68,7 +68,7 @@ export const About: React.FC = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="text-6xl md:text-8xl font-bold tracking-tighter text-black dark:text-white mb-8 leading-[0.9] text-balance"
                     >
-                        The Operating System for <span className="text-gray-400 dark:text-gray-600 inline-block">Product Managers.</span>
+                        The Operating System for <span className="text-gray-400 dark:text-gray-600 inline-block">Project Managers.</span>
                     </motion.h1>
 
                     <motion.p

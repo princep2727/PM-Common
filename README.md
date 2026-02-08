@@ -1,8 +1,8 @@
-# PM Commons - The Operating System for Product Managers
+# PM Commons - The Operating System for Project Managers
 
-![PM Commons Banner](https://img.shields.io/badge/PM%20Commons-Product%20Operating%20System-indigo?style=for-the-badge&logo=react)
+![PM Commons Banner](https://img.shields.io/badge/PM%20Commons-Project%20Operating%20System-indigo?style=for-the-badge&logo=react)
 
-**PM Commons** is a high-performance, all-in-one workspace designed to elevate the careers of Product Managers. Built with a "Fintech" aesthetic, it combines real-time intelligence, community insights, and AI-powered tools into a seamless, data-dense interface.
+**PM Commons** is a high-performance, all-in-one workspace designed to elevate the careers of Project Managers. Built with a "Fintech" aesthetic, it combines real-time intelligence, community insights, and AI-powered tools into a seamless, data-dense interface.
 
 🚀 **Live Demo**: [https://pm-commons.web.app](https://pm-commons.web.app)
 
@@ -10,8 +10,8 @@
 
 ### 🧠 **AI Career Coach**
 - **Mock Interviews**: Real-time voice/text simulations with Gemini-powered AI.
-- **Instant Feedback**: Detailed grading on product sense, execution, and leadership.
-- **Custom Scenarios**: Practice for specific roles (e.g., Google APM, Meta RPM).
+- **Instant Feedback**: Detailed grading on project execution, leadership, and stakeholder management.
+- **Custom Scenarios**: Practice for specific roles (e.g., Technical Program Manager, Scrum Master).
 
 ### 💼 **Job Board 2.0**
 - **Curated Listings**: Real-time feed of PM roles from top tech companies.
