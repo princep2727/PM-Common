@@ -94,6 +94,34 @@ const SAMPLE_JOBS: JobListing[] = [
         requirements: ['Degree in Business or IT', 'Organized', 'Fast-paced environment'],
         applyUrl: 'https://careers.ryanair.com/',
         source: 'Monster'
+    },
+    {
+        id: 'sample-5',
+        title: 'Program Manager',
+        company: 'Google',
+        location: 'Dublin, Ireland',
+        type: 'Hybrid',
+        salary: '€90,000 - €120,000',
+        postedDate: new Date(Date.now() - 259200000).toISOString(), // 3 days ago
+        isNew: false,
+        tags: ['Big Tech', 'Program Management', 'Cross-functional'],
+        requirements: ['Data analysis skills', 'Large scale project experience', 'Leadership'],
+        applyUrl: 'https://careers.google.com/',
+        source: 'Google Careers'
+    },
+    {
+        id: 'sample-6',
+        title: 'Scrum Master',
+        company: 'Fidelity Investments',
+        location: 'Dublin, Ireland',
+        type: 'Hybrid',
+        salary: '€65,000 - €85,000',
+        postedDate: new Date(Date.now() - 345600000).toISOString(), // 4 days ago
+        isNew: false,
+        tags: ['Finance', 'Scrum', 'Agile Coaching'],
+        requirements: ['PSM I/II', 'Financial services experience', 'Jira expert'],
+        applyUrl: 'https://jobs.fidelity.com/',
+        source: 'LinkedIn'
     }
 ];
 
@@ -142,10 +170,8 @@ export const useJobs = () => {
 
             const apiKey = import.meta.env.VITE_RAPIDAPI_KEY;
 
-            if (!apiKey) {
-                // Return mock data/message if key is missing during dev
-                console.warn('VITE_RAPIDAPI_KEY missing. Please add it to .env');
-                throw new Error('RapidAPI Key missing. Please add VITE_RAPIDAPI_KEY to your .env file.');
+            if (!apiKey || apiKey.includes('your_key')) {
+                throw new Error('Missing or Invalid API Key');
             }
 
             const response = await fetch('https://jsearch.p.rapidapi.com/search?query=Project%20Manager%20in%20Ireland&num_pages=1&date_posted=3days', {
@@ -210,16 +236,12 @@ export const useJobs = () => {
         } catch (err: any) {
             console.error('Error fetching jobs:', err);
 
-            // Check if we have valid cache to show instead of total failure
-            const cachedData = localStorage.getItem(CACHE_KEY);
-            if (cachedData) {
-                setJobs(JSON.parse(cachedData));
-                setError(`API Error. Showing cached data from previous fetch. (${err.message})`);
-            } else {
-                setJobs([]); // No jobs
-                setError(`Job Search Failed: ${err.message}. Check your API Key and Subscription.`);
-            }
-            setIsSampleData(false);
+            // Universal Fallback: If API fails (403, 429, Network), usage sample data
+            console.warn('API failed, falling back to sample data');
+            setJobs(SAMPLE_JOBS);
+            setIsSampleData(true);
+            setError(`Demo Mode: Live search unavailable (${err.message || 'Check API Key'}). Showing sample data.`);
+
         } finally {
             setLoading(false);
         }
