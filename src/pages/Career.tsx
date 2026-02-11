@@ -169,7 +169,7 @@ export const Career: React.FC = () => {
                     </div>
 
                     {/* Error State */}
-                    {error && (
+                    {error && !isSampleData && (
                         <div className="card p-6 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800">
                             <div className="flex flex-col gap-2 text-red-700 dark:text-red-300">
                                 <div className="flex items-center gap-3">
@@ -222,7 +222,7 @@ export const Career: React.FC = () => {
                     )}
 
                     {/* Job Cards */}
-                    {!loading && !error && (
+                    {!loading && (!error || isSampleData) && (
                         <div className="space-y-4">
                             <div className="space-y-0 border-t border-gray-200 dark:border-gray-800">
                                 {filteredJobs.map((job) => (
