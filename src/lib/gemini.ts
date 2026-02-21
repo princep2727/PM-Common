@@ -41,7 +41,7 @@ export const generateInterviewQuestion = async (topic: string, difficulty: strin
 
     try {
         const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const prompt = `Act as a Senior Project Manager Interviewer at a FAANG company. 
         Generate a single challenging ${difficulty} level interview question about "${topic}".
@@ -63,7 +63,7 @@ export const provideFeedback = async (question: string, answer: string): Promise
 
     try {
         const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
         const prompt = `Act as a Senior Project Manager Interviewer. 
         Question: "${question}"
